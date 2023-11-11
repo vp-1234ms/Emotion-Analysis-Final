@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Emotion Analysis</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Emotion Analysis</h1>
+        <form action="#" method="POST" enctype="multipart/form-data" id="fileForm">
+            <label for="fileType">Choose file type:</label><br>
+            <input type="radio" name="fileType" value="image" checked> Image
+            <input type="radio" name="fileType" value="audio"> Audio
+            <input type="radio" name="fileType" value="video"> Video<br>
+
+            <input type="file" name="file" id="fileInput" accept=".jpg, .jpeg, .png, .mp3, .wav, .mp4"><br>
+
+            <button type="button" onclick="checkFileType()">Check</button>
+            <button type="submit" id="processBtn" disabled>Process</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
