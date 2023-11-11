@@ -1,0 +1,10 @@
+Flask==2.0.1
+moviepy==1.0.3
+speechrecognition==3.8.1
+numpy==1.21.2
+Pillow==8.3.1
+librosa==0.8.1
+joblib==1.1.0
+opencv-python
+scikit-learn==0.24.2
+tensorflow==2.5.0
