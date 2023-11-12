@@ -8,29 +8,89 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Emotion Analysis Results</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url('https://d1sr9z1pdl3mb7.cloudfront.net/wp-content/uploads/2022/03/07162020/synthetic-data-scaled.jpg');
+            background-size: cover;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 80%;
+            margin: 10% auto;
+            padding: 5%;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        .chart-container {
+            width: 100%;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
         canvas {
             max-width: 100%;
             max-height: 100%;
             display: block;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                max-width: 90%;
+            }
+
+            .chart-container {
+                width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Emotion Analysis Results</h1>
         <div>
             {% if emotions %}
-                <h2>Emotions Predicted:</h2>
+                <h2>Emotions Analysis:</h2>
                 <ul>
                     {% for i in range(emotions|length) %}
                         <li>{{ emotions[i]|upper }}: {{ probabilities[i]|round(2) }}</li>
-                        <div class="chart-container" style="position: relative; height:200px; width:200px;">
+                        <div class="chart-container">
                             <canvas id="emotionChart{{ i }}"></canvas>
                         </div>
                         <br>
                     {% endfor %}
                 </ul>
+
+                <!-- Additional Charts -->
+                <div class="chart-container">
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart-title">Bar Chart</div>
+
+                <div class="chart-container">
+                    <canvas id="lineChart"></canvas>
+                </div>
+                <div class="chart-title">Line Chart</div>
+
+                <div class="chart-container">
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div class="chart-title">Pie Chart</div>
+
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+                <div class="chart-title">Radar Chart</div>
+
                 <script>
                     {% for i in range(emotions|length) %}
                         var ctx{{ i }} = document.getElementById('emotionChart{{ i }}').getContext('2d');
@@ -46,9 +106,104 @@
                             options: {
                                 responsive: true,
                                 maintainAspectRatio: false,
+                                title: {
+                                    display: true,
+                                    text: '{{ emotions[i] }} Emotion Probability',
+                                },
+                                legend: {
+                                    display: true,
+                                },
+                                tooltips: {
+                                    callbacks: {
+                                        label: function (tooltipItem, data) {
+                                            var dataset = data.datasets[tooltipItem.datasetIndex];
+                                            var label = data.labels[tooltipItem.index];
+                                            var value = dataset.data[tooltipItem.index];
+                                            return label + ': ' + value;
+                                        },
+                                    },
+                                },
                             },
                         });
                     {% endfor %}
+
+                    // Bar Chart
+                    var ctxBar = document.getElementById('barChart').getContext('2d');
+                    var barChart = new Chart(ctxBar, {
+                        type: 'bar',
+                        data: {
+                            labels: [{% for emotion in emotions %}'{{ emotion }}',{% endfor %}],
+                            datasets: [{
+                                label: 'Emotion Probabilities',
+                                data: [{{ probabilities|join(', ') }}],
+                                backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'],
+                            }],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        },
+                    });
+                    // Line Chart
+                    var ctxLine = document.getElementById('lineChart').getContext('2d');
+                    var lineChart = new Chart(ctxLine, {
+                        type: 'line',
+                        data: {
+                            labels: [{% for emotion in emotions %}'{{ emotion }}',{% endfor %}],
+                            datasets: [{
+                                label: 'Emotion Probabilities',
+                                data: [{{ probabilities|join(', ') }}],
+                                borderColor: '#36A2EB',
+                                borderWidth: 2,
+                                fill: false,
+                            }],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                        },
+                    });
+                    // Pie Chart
+                    var ctxPie = document.getElementById('pieChart').getContext('2d');
+                    var pieChart = new Chart(ctxPie, {
+                        type: 'pie',
+                        data: {
+                            labels: [{% for emotion in emotions %}'{{ emotion }}',{% endfor %}],
+                            datasets: [{
+                                data: [{{ probabilities|join(', ') }}],
+                                backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'],
+                            }],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                        },
+                    });
+
+                    // Radar Chart
+                    var ctxRadar = document.getElementById('radarChart').getContext('2d');
+                    var radarChart = new Chart(ctxRadar, {
+                        type: 'radar',
+                        data: {
+                            labels: [{% for emotion in emotions %}'{{ emotion }}',{% endfor %}],
+                            datasets: [{
+                                label: 'Emotion Probabilities',
+                                data: [{{ probabilities|join(', ') }}],
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                borderWidth: 2,
+                            }],
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                        },
+                    });
                 </script>
             {% else %}
                 <p>No emotions predicted.</p>
