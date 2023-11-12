@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Emotion Analysis</title>
+    <style>
+        #loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+        }
+
+        #loading img {
+            width: 150px;  /* adjust the size as needed */
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +38,18 @@
         </form>
     </div>
 
+    <!-- Loading Element with Online GIF URL -->
+    <div id="loading">
+        <img src="https://media.tenor.com/JBgYqrobdxsAAAAi/loading.gif" alt="loading">
+    </div>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Show loading element when the form is submitted
+        document.getElementById("fileForm").addEventListener("submit", function () {
+            document.getElementById("loading").style.display = "block";
+        });
+    </script>
 </body>
 
 </html>
