@@ -119,19 +119,22 @@ def process_video(video_path):
     all_emotions = [emotion.lower() for emotion in predicted_emotions + top3_emotions + top_emotions]
     all_probabilities = probabilities + top3_probabilities + top_probabilities
 
-    # Create a dictionary to associate emotions with their probabilities
-    emotion_prob_dict = {}
+    # Combine similar emotions and sum their probabilities
+    combined_emotion_prob_dict = {}
 
     for emotion, probability in zip(all_emotions, all_probabilities):
-        emotion_prob_dict[emotion] = emotion_prob_dict.get(emotion, 0) + probability
+        # Combine "angry" and "anger" into a single category "anger"
+        if emotion in ["angry", "anger"]:
+            emotion = "anger"
+
+        combined_emotion_prob_dict[emotion] = combined_emotion_prob_dict.get(emotion, 0) + probability
 
     # Sort the dictionary by probabilities in descending order
-    sorted_emotion_prob = {k: v for k, v in sorted(emotion_prob_dict.items(), key=lambda item: item[1], reverse=True)}
+    sorted_combined_emotion_prob = {k: v for k, v in sorted(combined_emotion_prob_dict.items(), key=lambda item: item[1], reverse=True)}
 
     # Extract the top N emotions and their probabilities
-    final_top_emotions = list(sorted_emotion_prob.keys())[:]
-    final_top_probabilities = list(sorted_emotion_prob.values())[:]
-
+    final_top_emotions = list(sorted_combined_emotion_prob.keys())[:]
+    final_top_probabilities = list(sorted_combined_emotion_prob.values())[:]
 
     return final_top_emotions, final_top_probabilities
 
@@ -195,19 +198,22 @@ def process_audio(audio_path):
     all_emotions = [emotion.lower() for emotion in predicted_emotions +  top_emotions]
     all_probabilities = probabilities +  top_probabilities
 
-    # Create a dictionary to associate emotions with their probabilities
-    emotion_prob_dict = {}
+    # Combine similar emotions and sum their probabilities
+    combined_emotion_prob_dict = {}
 
     for emotion, probability in zip(all_emotions, all_probabilities):
-        emotion_prob_dict[emotion] = emotion_prob_dict.get(emotion, 0) + probability
+        # Combine "angry" and "anger" into a single category "anger"
+        if emotion in ["angry", "anger"]:
+            emotion = "anger"
+
+        combined_emotion_prob_dict[emotion] = combined_emotion_prob_dict.get(emotion, 0) + probability
 
     # Sort the dictionary by probabilities in descending order
-    sorted_emotion_prob = {k: v for k, v in sorted(emotion_prob_dict.items(), key=lambda item: item[1], reverse=True)}
+    sorted_combined_emotion_prob = {k: v for k, v in sorted(combined_emotion_prob_dict.items(), key=lambda item: item[1], reverse=True)}
 
     # Extract the top N emotions and their probabilities
-    final_top_emotions = list(sorted_emotion_prob.keys())[:]
-    final_top_probabilities = list(sorted_emotion_prob.values())[:]
-
+    final_top_emotions = list(sorted_combined_emotion_prob.keys())[:]
+    final_top_probabilities = list(sorted_combined_emotion_prob.values())[:]
 
     return final_top_emotions, final_top_probabilities
 
