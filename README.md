@@ -14,6 +14,8 @@ The Multi-Modal Emotion Detection and Analysis System addresses the contemporary
 - [Python, TensorFlow , Numpy, Pandas , Scikit_Learn,Jupyter Notebook,VsCode , Flask , Keras ,ML , DL(CNN , ANN , Neural Networking]-Development
 - [HTML,CSS,JS,Bootstrap]-Frontend Service
 - [Figma]-Web Designing
+  
+![analysis](https://github.com/vp-1234ms/Emotion-Analysis-Final/assets/102847008/dfb4b7db-f013-493a-8d9d-85798f5f0b1a)
 
 ## 🎉 Built By <a name = "acknowledgments"></a>
 - Vaibhav Vilas Pawar
