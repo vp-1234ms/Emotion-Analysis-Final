@@ -1,9 +1,9 @@
 <p align="center">
   <a href="" rel="noopener"></a>
 </p>
-<h3 align="center">Multi-Modal Emotion Detection and Analysis System</h3>
+<h1 align="center">Multi-Modal Emotion Detection and Analysis System</h1>
 
-![emotion](https://github.com/vp-1234ms/Emotion-Analysis-Final/assets/102847008/87d94074-8cee-4feb-ad08-992ae57f61a3)
+![emotion](https://github.com/vp-1234ms/Emotion-Analysis-Final/assets/102847008/87d94074-8cee-4feb-ad08-992ae57f61a3) <a name = "description"></a>
 
 # 📝 Description <a name = "description"></a>
 
