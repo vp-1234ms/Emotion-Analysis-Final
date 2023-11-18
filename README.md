@@ -37,6 +37,9 @@ Developed a seamless user experience allowing users to upload image, audio, or v
 Integrated image, audio, and text models for a comprehensive analysis of video files.
 Implemented a result page presenting emotion probabilities in a completion pie chart,bar chart and pe chart sorted from highest to lowest.
 
+![M2](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/438e24f6-ac4f-442a-affe-6c9dc3e3348c)
+
+
 ## ⛏️ Built With <a name = "tech_stack"></a>
 - [ASVP,MEXICAN,RAVDESS,TESS,CREMA,SAVEE]-Datasets
 - [Data Collection,Data Integration,Data Hadelling,Data Management,Data Processing]-Data Analysis
