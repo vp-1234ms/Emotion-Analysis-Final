@@ -14,6 +14,7 @@ Data Integration and Preprocessing:
 Utilized various text datasets (ASVP, MEXICAN, RAVDESS, TESS, CREMA, SAVEE), audio dataset, and image dataset.
 Integrated these datasets to create a unified text, audio, and image dataset.
 Applied data cleaning techniques and performed data sampling, upsampling, and downsampling to balance the dataset.
+
 Data Visualization:
 Created bar plots to visualize the frequency count of audio files for each emotion.
 Generated pie charts displaying the total count of audio files for each emotion.
@@ -29,7 +30,7 @@ Integrated Flask for both frontend and backend.
 Web Application Integration:
 Developed a seamless user experience allowing users to upload image, audio, or video files.
 Integrated image, audio, and text models for a comprehensive analysis of video files.
-Implemented a result page presenting emotion probabilities in a completion pie chart,bar chart and pe chart sorted from highest to lowest.+-
+Implemented a result page presenting emotion probabilities in a completion pie chart,bar chart and pe chart sorted from highest to lowest.
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 - [ASVP,MEXICAN,RAVDESS,TESS,CREMA,SAVEE]-Datasets
