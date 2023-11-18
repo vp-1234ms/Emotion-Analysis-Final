@@ -19,14 +19,16 @@ Data Visualization:
 Created bar plots to visualize the frequency count of audio files for each emotion.
 Generated pie charts displaying the total count of audio files for each emotion.
 Provided a clear understanding of the distribution of emotions in the dataset.
-Average Audio Duration:
+
 Machine Learning Model Selection:
 Developed code for audio,image and text emotion classification using various machine learning models (Random Forest, Gradient Boosting, SVC, K-Nearest Neighbors, Decision Tree, Naive Bayes, Multi-layer Perceptron, AdaBoost, Quadratic Discriminant Analysis, and XGBoost).
 Selected the best-performing model based on accuracy and saved it for future use.
+
 Multimodal Model Training:
 Trained various machine learning and custom CNN models for audio data.
 Utilized machine learning and custom ANN models for audio and text data.
 Integrated Flask for both frontend and backend.
+
 Web Application Integration:
 Developed a seamless user experience allowing users to upload image, audio, or video files.
 Integrated image, audio, and text models for a comprehensive analysis of video files.
