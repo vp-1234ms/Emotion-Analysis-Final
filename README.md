@@ -41,7 +41,9 @@ Implemented a result page presenting emotion probabilities in a completion pie c
 
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
-- [ASVP,MEXICAN,RAVDESS,TESS,CREMA,SAVEE]-Datasets
+- [GoEmotions_Text, IEMOCAP_Text, ISEAR_Text, SEMVAL_Text,Twitter text datasets]-Text Datasets
+- [ASVP_AUDIO, CREMA_AUDIO, EmoDB_AUDIO, MELD_AUDIO, RAVDESS_AUDIO, SAVEE_AUDIO,TESS_AUDIO]-Audio Datasets
+- [FER DATASET,YounAffectnet Dataset]-Image Datasets
 - [Data Collection,Data Integration,Data Hadelling,Data Management,Data Processing]-Data Analysis
 - [Flask]-Backend Service
 - [Python, TensorFlow , Numpy, Pandas , Scikit_Learn,Jupyter Notebook,VsCode , Flask , Keras ,ML , DL(CNN , ANN , Neural Networking]-Machine Learning
