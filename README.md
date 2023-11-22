@@ -39,6 +39,14 @@ Implemented a result page presenting emotion probabilities in a completion pie c
 
 ![M2](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/438e24f6-ac4f-442a-affe-6c9dc3e3348c)
 
+# Visualizations
+![t3](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/8ea09110-f053-476e-829e-7c6ddb7d1846)
+![t4](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/21a6d20b-82ee-43dc-a1d8-b20ab01a6183)
+![t5](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/74cd1685-e032-4f75-af14-9e0f37ced003)
+![a4](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/c6934498-2327-48aa-b257-dcb1ae473289)
+![a14](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/ef347bfd-8d19-4cd4-92a6-c54b423b5861)
+![a6](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/8022011e-1a34-46f2-943b-8dde6d96e3e3)
+![a7](https://github.com/vp-1234ms/Multi-Modal-Emotion-Detection-and-Analysis-System/assets/102847008/a5eb2ee3-6078-4446-b326-0ecfb2bc4ac2)
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 - [GoEmotions_Text, IEMOCAP_Text, ISEAR_Text, SEMVAL_Text,Twitter text datasets]-Text Datasets
